@@ -6,6 +6,7 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <p>&copy; 2025 AfricaPulse. All rights reserved.</p>
+        <p>Yournumber one marekting agency</p>
         <ul className="social-links">
           <li><Link href="https://facebook.com"><a target="_@AfricaPulse" rel="noopener noreferrer">Facebook</a></Link></li>
           <li><Link href="https://twitter.com"><a target="_@AfricaPulse" rel="noopener noreferrer">Twitter</a></Link></li>
