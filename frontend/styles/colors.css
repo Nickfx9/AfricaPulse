@@ -1,0 +1,39 @@
+:root {
+  --primary-emerald-green: #2ECC71;
+  --primary-gold: #F1C40F;
+  --primary-white: #FFFFFF;
+  --secondary-deep-blue: #2980B9;
+  --secondary-turquoise: #1ABC9C;
+  --secondary-dark-gray: #2C3E50;
+  --accent-bright-orange: #E67E22;
+  --accent-crimson-red: #E74C3C;
+  --accent-violet: #9B59B6;
+}
+
+body {
+  background-color: var(--primary-white);
+  color: var(--secondary-dark-gray);
+}
+
+header, footer {
+  background-color: var(--primary-emerald-green);
+  color: var(--primary-white);
+}
+
+a {
+  color: var(--secondary-deep-blue);
+}
+
+a:hover {
+  color: var(--accent-bright-orange);
+}
+
+button {
+  background-color: var(--primary-gold);
+  color: var(--primary-emerald-green);
+}
+
+button:hover {
+  background-color: var(--accent-bright-orange);
+  color: var(--primary-white);
+}
