@@ -26,11 +26,17 @@ const About = () => {
         <p>Our team is composed of passionate individuals who are committed to making a difference. We come from diverse backgrounds and bring a wealth of experience to the table. Meet some of our key team members:</p>
         
         <ul>
-          <li><strong>Nicholas mwathiki:</strong> Founder & CEO -Nicholas is a visionary leader with over 20 years of experience in community development and digital innovation.</li>
-          <li><strong>Douglas Kimathi:</strong> Chief Operating Officer - Douglas has a background in operations management and has worked in various industries across Africa.</li>
+          <li><strong>Nicholas mwathiki:</strong> Founder & CEO - Nicholas is a visionary leader with over 20 years of experience in community development and digital innovation.</li>
+          <li><strong>Douglas kimathi:</strong> Chief Operating Officer - Douglas has a background in operations management and has worked in various industries across Africa.</li>
           <li><strong>Mary Johnson:</strong> Head of Marketing - Mary is a marketing expert with a passion for storytelling and brand building.</li>
           <li><strong>Dennis Khan:</strong> Lead Developer - Dennis is a skilled software engineer with a focus on building scalable and user-friendly platforms.</li>
         </ul>
+        
+        <h2>Hold an Exclusive Event with Us</h2>
+        <p>At AfricaPulse, we offer a unique opportunity for companies, whether in web3, tech, or any other industry, to hold exclusive events with us. Our platform provides the perfect setting to engage with your audience, showcase your innovations, and foster meaningful connections. Contact us to learn more about how we can help you host an unforgettable event.</p>
+        
+        <h2>Plan an Event with Us</h2>
+        <p>Planning an event? Let AfricaPulse be your partner in creating a successful and impactful event. Our experienced team is here to support you every step of the way, from planning and promotion to execution and follow-up. Reach out to us to start planning your next event.</p>
         
         <h2>Join Us</h2>
         <p>We are always looking for passionate and talented individuals to join our team. If you are interested in contributing to AfricaPulse, please <Link href="/contact"><a>contact us</a></Link>.</p>
@@ -43,3 +49,4 @@ const About = () => {
 };
 
 export default About;
+        
