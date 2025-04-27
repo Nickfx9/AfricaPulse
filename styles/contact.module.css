@@ -1,0 +1,71 @@
+/* styles/contact.module.css */
+
+/* Full Page Background */
+.contactPageBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #002b4c; /*  blue background */
+    z-index: -1; /* Ensure it stays behind the content */
+  }
+  
+  /* General Contact Page Container */
+  .contactContainer {
+    background-color: rgba(0, 43, 76, 0.9); /* Dark blue background with transparency */
+    color: #e0f7fa; /* Light cyan text */
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative; /* So it stays above the background */
+    text-align: center;
+  }
+  
+  /* Heading Style */
+  .heading {
+    text-align: center;
+    color: #0ff; /* Bright cyan for the heading */
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  
+  /* Information Text under the heading */
+  .infoText {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #80d4ff; /* Light cyan text */
+    margin-bottom: 2rem;
+  }
+  
+  /* Contact Information Section */
+  .contactInfo {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Styling for Links (WhatsApp and Email) */
+  .contactInfo a {
+    color: #0ff; /* Cyan color for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contactInfo a:hover {
+    color: #80d4ff; /* Lighter cyan on hover */
+  }
+  
+  /* Styling for the strong labels */
+  .contactInfo strong {
+    color: #80d4ff; /* Lighter cyan for strong labels */
+  }
+  
+  /* Add some subtle hover effects for each contact section */
+  .contactInfo p:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  

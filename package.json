@@ -1,0 +1,32 @@
+{
+  "name": "africapulse",
+  "version": "1.0.0",
+  "description": "AfricaPulse is a community-driven platform dedicated to promoting events, news, and initiatives across Africa.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "africa",
+    "events",
+    "community",
+    "platform"
+  ],
+  "author": "Nickfx9",
+  "license": "MIT",
+  "dependencies": {
+    "framer-motion": "^12.6.3",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  }
+}

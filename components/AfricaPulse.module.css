@@ -1,0 +1,286 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.leftImage {
+  left: 0;
+  background-image: url('/images/africa-logo-2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.rightImage {
+  right: 0;
+  background-image: url('/images/africa-right.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.welcomeMessage {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 10px #0ff;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: bold;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+  z-index: 3;
+}
+
+.pulse {
+  color: #0f0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #0f0;
+  }
+  50% {
+    text-shadow: 0 0 20px #0f0;
+  }
+  100% {
+    text-shadow: 0 0 5px #0f0;
+  }
+}
+
+.secondMessage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  z-index: 4;
+  width: 80%;
+  line-height: 1.5;
+  text-shadow: 0 0 10px #fff;
+}
+
+/* --- Mission Section --- */
+.missionSection {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.missionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #0a0a0a;
+}
+
+.missionText {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+.missionImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.missionImages img,
+.missionImages :global(img) {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, opacity;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.missionImages img:hover,
+.missionImages :global(img:hover) {
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Vision Section --- */
+.visionSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #eef6f9;
+}
+
+.visionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #0a0a0a;
+}
+
+.visionText {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+.visionImages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.visionImage {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.visionImage:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Impact Section --- */
+.impactSection {
+  background-color: #000;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.impactTitle {
+  font-size: 2.5rem;
+  color: #0ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impactCard {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.impactCard:hover {
+  transform: translateY(-5px);
+}
+
+.impactNumber {
+  font-size: 3rem;
+  color: #0f0;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px #0f0;
+}
+
+.impactLabel {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .text {
+    font-size: 40px;
+  }
+
+  .welcomeMessage {
+    font-size: 28px;
+  }
+
+  .secondMessage {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .missionTitle,
+  .visionTitle,
+  .impactTitle {
+    font-size: 2rem;
+  }
+
+  .missionText,
+  .visionText {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .visionImages {
+    gap: 1rem;
+  }
+
+  .visionImage {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .impactGrid {
+    gap: 1rem;
+  }
+
+  .impactCard {
+    padding: 1.5rem;
+  }
+
+  .impactNumber {
+    font-size: 2.2rem;
+  }
+
+  .impactLabel {
+    font-size: 1rem;
+  }
+}
