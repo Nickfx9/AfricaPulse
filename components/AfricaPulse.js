@@ -186,7 +186,7 @@ const AfricaPulse = () => {
       </section>
 
       {/* Pulse Your Idea Section */}
-      <PulseYourIdea />
+      
     </div>
   );
 };

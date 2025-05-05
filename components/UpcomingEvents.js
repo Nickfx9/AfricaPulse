@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const events = [
   {
@@ -26,9 +26,22 @@ const events = [
 
 const UpcomingEvents = () => {
   const today = new Date();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const upcoming = events.filter(event => new Date(event.date) >= today);
   const past = events.filter(event => new Date(event.date) < today);
+
+  const handleJoinEventClick = (event) => {
+    console.log("Event clicked:", event); // Debugging line to see if event is selected
+    if (event.link) {
+      window.open(event.link, '_blank');
+    } else {
+      setSelectedEvent(event); // Set the selected event for the modal
+      setShowModal(true); // Open the modal
+      console.log("Modal opened:", event.title); // Debugging modal state
+    }
+  };
 
   return (
     <section className="py-10 px-5 bg-gray-100 text-gray-800">
@@ -40,10 +53,22 @@ const UpcomingEvents = () => {
             <p className="mt-2 text-gray-600">📍 {event.location}</p>
             <p className="text-gray-600">🗓️ {new Date(event.date).toLocaleDateString()}</p>
             <p className="text-gray-600">📡 {event.type}</p>
-            {event.link && (
-              <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 mt-2 inline-block hover:underline">
+            {event.link ? (
+              <a 
+                href={event.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-blue-600 mt-2 inline-block hover:underline"
+              >
                 Join Event
               </a>
+            ) : (
+              <button
+                onClick={() => handleJoinEventClick(event)} 
+                className="bg-blue-600 text-white py-2 px-4 rounded mt-4 hover:bg-blue-700 transition"
+              >
+                Register / RSVP
+              </button>
             )}
           </div>
         )) : <p className="text-center col-span-2">No upcoming events at the moment.</p>}
@@ -62,6 +87,37 @@ const UpcomingEvents = () => {
             ))}
           </div>
         </>
+      )}
+
+      {/* Modal for RSVP Registration */}
+      {showModal && selectedEvent && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg w-96">
+            <h2 className="text-2xl font-semibold mb-4">RSVP for {selectedEvent.title}</h2>
+            <form>
+              <label className="block text-gray-700 mb-2">
+                Name:
+                <input type="text" className="w-full p-2 mt-1 border rounded" placeholder="Your name" />
+              </label>
+              <label className="block text-gray-700 mb-2">
+                Email:
+                <input type="email" className="w-full p-2 mt-1 border rounded" placeholder="Your email" />
+              </label>
+              <label className="block text-gray-700 mb-2">
+                Message (Optional):
+                <textarea className="w-full p-2 mt-1 border rounded" placeholder="Any message for us?" />
+              </label>
+              <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded mt-4 hover:bg-blue-700 transition">
+                Submit RSVP
+              </button>
+            </form>
+            <button 
+              onClick={() => setShowModal(false)} 
+              className="mt-4 text-red-600 hover:text-red-700">
+              Close
+            </button>
+          </div>
+        </div>
       )}
     </section>
   );

@@ -43,22 +43,20 @@ const Home = () => {
           knowledge, and fueling innovation. Together, we can harness blockchain to build a more inclusive, equitable, and prosperous
           Africa.
         </p>
+        <h2>Supporting Startups & Innovators</h2>
+<p>
+  At AfricaPulse, we are dedicated to helping startups and emerging innovators across Africa turn their ideas into reality.
+</p>
+<ul>
+  <li><strong>Visibility:</strong> We shine a spotlight on groundbreaking projects, helping startups gain recognition.</li>
+  <li><strong>Connections:</strong> We connect entrepreneurs with potential partners, investors, and mentors.</li>
+  <li><strong>Resources:</strong> We share valuable tools, insights, and opportunities to help startups grow and scale.</li>
+  <li><strong>Community:</strong> We foster a supportive network where innovators can exchange ideas, collaborate, and thrive.</li>
+</ul>
+<p>
+  AfricaPulse is more than a platform — it’s a launchpad for Africa’s next generation of changemakers.
+</p>
 
-        <h2>Our Team</h2>
-        <p>
-          Our team is composed of passionate individuals who are committed to making a difference. We come from diverse backgrounds
-          and bring a wealth of experience to the table. Meet some of our key team members:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Nicholas Mwathiki:</strong> Founder & CEO - Nicholas is a visionary leader with over 5 years of experience in
-            community development and digital innovation.
-          </li>
-          <li>
-            <strong>Mary Johnson:</strong> Head of Marketing - Mary is a marketing expert with a passion for storytelling and brand building.
-          </li>
-        </ul>
 
         <h2>Hold an Exclusive Event with Us</h2>
         <p>
