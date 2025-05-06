@@ -1,11 +1,11 @@
-import React from 'react';
-import Layout from '../components/Layout';
+// pages/index.js
+
 import PulseYourIdea from '../components/PulseYourIdea';
 import UpcomingEvents from '../components/UpcomingEvents';
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <section className="welcome">
         <h1>Welcome to AfricaPulse 🌍✨</h1>
         <p>Your hub for blockchain innovation across Africa.</p>
@@ -22,72 +22,61 @@ const Home = () => {
         <p>
           AfricaPulse exists to amplify innovation and unlock the immense potential across Africa’s tech and blockchain ecosystem.
           We are driven by the belief that when people connect, share ideas, and work together, extraordinary change becomes possible.
-          Our platform is designed to empower changemakers, foster cross-border collaboration, and accelerate progress that benefits
-          communities across the continent. Whether you’re an entrepreneur, a developer, a creative, or simply passionate about
-          Africa’s future — AfricaPulse is your home.
         </p>
 
         <h2>What We Do</h2>
-        <p>
-          At AfricaPulse, we transform ideas into action. We share the latest news, promote groundbreaking projects, and host events
-          that bring people together. Our platform connects individuals and organizations working across sectors — from tech startups
-          and nonprofits to blockchain communities and innovators. By facilitating knowledge exchange, amplifying diverse voices, and
-          sparking meaningful collaborations, we help build a stronger, more connected Africa.
-        </p>
+      <p>
+  At AfricaPulse, we’re more than just a platform — we’re a movement. We share the latest news, promote groundbreaking projects, and host events that foster collaboration and innovation. Our platform connects individuals, startups, and organizations across sectors — from tech innovators and blockchain communities to nonprofits and corporate leaders. By uniting like-minded pioneers, we empower startups to grow, scale, and drive the future of Africa's digital economy.
+</p>
+
 
         <h2>The Power of Blockchain in Africa</h2>
-        <p>
-          Blockchain is more than just technology — it’s a movement reshaping Africa’s future. From financial inclusion and
-          transparent governance to supply chain innovation and digital identity, blockchain has the power to solve real-world
-          challenges across the continent. At AfricaPulse, we believe in unlocking this potential by connecting people, sharing
-          knowledge, and fueling innovation. Together, we can harness blockchain to build a more inclusive, equitable, and prosperous
-          Africa.
-        </p>
-        <h2>Supporting Startups & Innovators</h2>
 <p>
-  At AfricaPulse, we are dedicated to helping startups and emerging innovators across Africa turn their ideas into reality.
+  Blockchain is more than just technology — it’s a movement reshaping Africa’s future. From financial inclusion and transparent governance to supply chain innovation and digital identity, blockchain has the power to solve real-world challenges across the continent. At AfricaPulse, we believe in unlocking this potential by connecting people, sharing knowledge, and fueling innovation. Together, we can harness blockchain to build a more inclusive, equitable, and prosperous Africa.
 </p>
 <ul>
-  <li><strong>Visibility:</strong> We shine a spotlight on groundbreaking projects, helping startups gain recognition.</li>
-  <li><strong>Connections:</strong> We connect entrepreneurs with potential partners, investors, and mentors.</li>
-  <li><strong>Resources:</strong> We share valuable tools, insights, and opportunities to help startups grow and scale.</li>
-  <li><strong>Community:</strong> We foster a supportive network where innovators can exchange ideas, collaborate, and thrive.</li>
+  <li><strong>Financial Inclusion:</strong> Blockchain provides access to banking for millions, enabling secure and affordable financial services for all.</li>
+  <li><strong>Transparent Governance:</strong> Blockchain enhances transparency and trust in governmental processes, reducing corruption and ensuring accountability.</li>
+  <li><strong>Supply Chain Innovation:</strong> By ensuring traceability and authenticity, blockchain is revolutionizing industries like agriculture and logistics.</li>
+  <li><strong>Empowering Entrepreneurs:</strong> Blockchain enables new business models, supporting African startups and innovative projects across the continent.</li>
+  <li><strong>Decentralized Opportunities:</strong> Blockchain creates decentralized networks, providing opportunities for individuals and communities to thrive without relying on traditional systems.</li>
 </ul>
+
+
+        <h2>Supporting Startups & Innovators</h2>
+        <ul>
+          <li><strong>Visibility:</strong> We spotlight groundbreaking projects.</li>
+          <li><strong>Connections:</strong> We connect entrepreneurs with partners, investors, and mentors.</li>
+          <li><strong>Resources:</strong> We share valuable tools, insights, and opportunities.</li>
+          <li><strong>Community:</strong> We foster a supportive network for innovators.</li>
+        </ul>
+
+        <h2>Where Innovation Meets Celebration</h2>
 <p>
-  AfricaPulse is more than a platform — it’s a launchpad for Africa’s next generation of changemakers.
+  Be the future — partner with AfricaPulse for exclusive events that blend cutting-edge ideas with unforgettable experiences. From VIP showcases to groundbreaking launches, we help you turn bold visions into reality. Let’s create the extraordinary together.
 </p>
 
 
-        <h2>Hold an Exclusive Event with Us</h2>
-        <p>
-          At AfricaPulse, we offer a unique opportunity for companies, whether in web3, tech, or any other industry, to hold exclusive
-          events with us. Our platform provides the perfect setting to engage with your audience, showcase your innovations, and foster
-          meaningful connections. Contact us to learn more about how we can help you host an unforgettable event.
-        </p>
-
         <h2>Plan an Event with Us</h2>
-        <p>
-          Planning an event? Let AfricaPulse be your partner in creating a successful and impactful event. Our experienced team is here
-          to support you every step of the way, from planning and promotion to execution and follow-up. Reach out to us to start planning
-          your next event.
-        </p>
+<p>
+  Let AfricaPulse be your trusted partner in creating impactful events — from planning, promotion, and execution to post-event engagement. Whether you’re hosting conferences, workshops, or community meetups, we provide the tools and support to make your vision a success.
+</p>
+
 
         <h2>Join Us</h2>
         <p>
-          We are always looking for passionate and talented individuals to join our team. If you are interested in contributing to
-          AfricaPulse, please <a href="/contact">contact us</a>.
+          Interested in contributing? Please <a href="/contact">contact us</a>.
         </p>
 
         <h2>Contact Us</h2>
         <p>
-          For any inquiries, suggestions, or collaborations, feel free to reach out to us through our <a href="/contact">contact page</a>.
-          We would love to hear from you!
+          For inquiries, suggestions, or collaborations, visit our <a href="/contact">contact page</a>.
         </p>
       </section>
 
       <PulseYourIdea />
       <UpcomingEvents />
-    </Layout>
+    </>
   );
 };
 

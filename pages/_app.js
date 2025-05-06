@@ -1,16 +1,13 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+// pages/_app.js
 
-const MyApp = ({ Component, pageProps }) => {
+import Layout from '../components/Layout';
+
+function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Header />
+    <Layout>
       <Component {...pageProps} />
-      <Footer />
-    </>
+    </Layout>
   );
-};
+}
 
 export default MyApp;
-

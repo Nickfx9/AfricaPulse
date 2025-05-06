@@ -4,11 +4,11 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
-      <main>{children}</main>
+      <main>{children}</main> {/* Main content is passed from the page */}
       <Footer />
-    </div>
+    </>
   );
 };
 
