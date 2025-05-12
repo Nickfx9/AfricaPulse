@@ -1,7 +1,6 @@
-// pages/index.js
-
 import PulseYourIdea from '../components/PulseYourIdea';
 import UpcomingEvents from '../components/UpcomingEvents';
+import HostEventForm from '../components/HostEventForm'; // Import the HostEventForm
 
 const Home = () => {
   return (
@@ -25,23 +24,21 @@ const Home = () => {
         </p>
 
         <h2>What We Do</h2>
-      <p>
-  At AfricaPulse, we’re more than just a platform — we’re a movement. We share the latest news, promote groundbreaking projects, and host events that foster collaboration and innovation. Our platform connects individuals, startups, and organizations across sectors — from tech innovators and blockchain communities to nonprofits and corporate leaders. By uniting like-minded pioneers, we empower startups to grow, scale, and drive the future of Africa's digital economy.
-</p>
-
+        <p>
+          At AfricaPulse, we’re more than just a platform — we’re a movement. We share the latest news, promote groundbreaking projects, and host events that foster collaboration and innovation. Our platform connects individuals, startups, and organizations across sectors — from tech innovators and blockchain communities to nonprofits and corporate leaders. By uniting like-minded pioneers, we empower startups to grow, scale, and drive the future of Africa's digital economy.
+        </p>
 
         <h2>The Power of Blockchain in Africa</h2>
-<p>
-  Blockchain is more than just technology — it’s a movement reshaping Africa’s future. From financial inclusion and transparent governance to supply chain innovation and digital identity, blockchain has the power to solve real-world challenges across the continent. At AfricaPulse, we believe in unlocking this potential by connecting people, sharing knowledge, and fueling innovation. Together, we can harness blockchain to build a more inclusive, equitable, and prosperous Africa.
-</p>
-<ul>
-  <li><strong>Financial Inclusion:</strong> Blockchain provides access to banking for millions, enabling secure and affordable financial services for all.</li>
-  <li><strong>Transparent Governance:</strong> Blockchain enhances transparency and trust in governmental processes, reducing corruption and ensuring accountability.</li>
-  <li><strong>Supply Chain Innovation:</strong> By ensuring traceability and authenticity, blockchain is revolutionizing industries like agriculture and logistics.</li>
-  <li><strong>Empowering Entrepreneurs:</strong> Blockchain enables new business models, supporting African startups and innovative projects across the continent.</li>
-  <li><strong>Decentralized Opportunities:</strong> Blockchain creates decentralized networks, providing opportunities for individuals and communities to thrive without relying on traditional systems.</li>
-</ul>
-
+        <p>
+          Blockchain is more than just technology — it’s a movement reshaping Africa’s future. From financial inclusion and transparent governance to supply chain innovation and digital identity, blockchain has the power to solve real-world challenges across the continent. At AfricaPulse, we believe in unlocking this potential by connecting people, sharing knowledge, and fueling innovation. Together, we can harness blockchain to build a more inclusive, equitable, and prosperous Africa.
+        </p>
+        <ul>
+          <li><strong>Financial Inclusion:</strong> Blockchain provides access to banking for millions, enabling secure and affordable financial services for all.</li>
+          <li><strong>Transparent Governance:</strong> Blockchain enhances transparency and trust in governmental processes, reducing corruption and ensuring accountability.</li>
+          <li><strong>Supply Chain Innovation:</strong> By ensuring traceability and authenticity, blockchain is revolutionizing industries like agriculture and logistics.</li>
+          <li><strong>Empowering Entrepreneurs:</strong> Blockchain enables new business models, supporting African startups and innovative projects across the continent.</li>
+          <li><strong>Decentralized Opportunities:</strong> Blockchain creates decentralized networks, providing opportunities for individuals and communities to thrive without relying on traditional systems.</li>
+        </ul>
 
         <h2>Supporting Startups & Innovators</h2>
         <ul>
@@ -52,16 +49,14 @@ const Home = () => {
         </ul>
 
         <h2>Where Innovation Meets Celebration</h2>
-<p>
-  Be the future — partner with AfricaPulse for exclusive events that blend cutting-edge ideas with unforgettable experiences. From VIP showcases to groundbreaking launches, we help you turn bold visions into reality. Let’s create the extraordinary together.
-</p>
-
+        <p>
+          Be the future — partner with AfricaPulse for exclusive events that blend cutting-edge ideas with unforgettable experiences. From VIP showcases to groundbreaking launches, we help you turn bold visions into reality. Let’s create the extraordinary together.
+        </p>
 
         <h2>Plan an Event with Us</h2>
-<p>
-  Let AfricaPulse be your trusted partner in creating impactful events — from planning, promotion, and execution to post-event engagement. Whether you’re hosting conferences, workshops, or community meetups, we provide the tools and support to make your vision a success.
-</p>
-
+        <p>
+          Let AfricaPulse be your trusted partner in creating impactful events — from planning, promotion, and execution to post-event engagement. Whether you’re hosting conferences, workshops, or community meetups, we provide the tools and support to make your vision a success.
+        </p>
 
         <h2>Join Us</h2>
         <p>
@@ -76,6 +71,9 @@ const Home = () => {
 
       <PulseYourIdea />
       <UpcomingEvents />
+
+      {/* Host Event Form section */}
+      <HostEventForm /> {/* This is the new addition */}
     </>
   );
 };
