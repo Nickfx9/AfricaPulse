@@ -5,12 +5,12 @@ import HostEventForm from '../components/HostEventForm'; // Import the HostEvent
 const Home = () => {
   return (
     <>
-      <section className="welcome">
+      <section id="home" className="welcome">
         <h1>Welcome to AfricaPulse 🌍✨</h1>
         <p>Your hub for blockchain innovation across Africa.</p>
       </section>
 
-      <section className="about">
+      <section id="about" className="about">
         <h1>About AfricaPulse</h1>
         <p>
           AfricaPulse is a community-driven platform dedicated to promoting events, news, and initiatives across Africa.
@@ -57,7 +57,18 @@ const Home = () => {
         <p>
           Let AfricaPulse be your trusted partner in creating impactful events — from planning, promotion, and execution to post-event engagement. Whether you’re hosting conferences, workshops, or community meetups, we provide the tools and support to make your vision a success.
         </p>
+      </section>
 
+      <section id="community">
+        <PulseYourIdea />
+        <UpcomingEvents />
+      </section>
+
+      <section id="join-us">
+        <HostEventForm />
+      </section>
+
+      <section id="contact">
         <h2>Join Us</h2>
         <p>
           Interested in contributing? Please <a href="/contact">contact us</a>.
@@ -68,12 +79,6 @@ const Home = () => {
           For inquiries, suggestions, or collaborations, visit our <a href="/contact">contact page</a>.
         </p>
       </section>
-
-      <PulseYourIdea />
-      <UpcomingEvents />
-
-      {/* Host Event Form section */}
-      <HostEventForm /> {/* This is the new addition */}
     </>
   );
 };

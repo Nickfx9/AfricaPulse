@@ -1,0 +1,45 @@
+/* Pushes the content below the fixed navbar */
+.content-wrapper {
+  padding-top: 70px;
+}
+
+/* Navbar styles for horizontal layout */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0a0f2c;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #3399ff;
+}
