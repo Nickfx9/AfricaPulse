@@ -1,10 +1,75 @@
 .container {
-  position: relative;
-  width: 100%;
+  display: flex;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
+.leftText {
+  flex: 1;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0f3d0f;
+  color: #a0d468;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  color: #a0d468;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin: 0.2rem 0;
+  color: #a0d468;
+}
+
+.keywords {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem 0;
+  color: #a0d468;
+}
+
+.exploreBtn {
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.exploreBtn:hover {
+  background-color: #e65500;
+}
+
+.rightImage {
+  flex: 1;
+  background-image: url('/images/africa-right.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+/* --- Removed conflicting styles ---
 .half {
   position: absolute;
   top: 0;
@@ -18,30 +83,14 @@
   background-size: cover;
   background-position: center;
 }
-
-.rightImage {
-  right: 0;
-  background-image: url('/images/africa-right.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
+*/
 
 .welcomeMessage {
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 36px;
+  font-size: 30px;
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px #0ff;
@@ -54,7 +103,7 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: #0ff;
   text-shadow: 0 0 10px #0ff;
@@ -92,7 +141,6 @@
   line-height: 1.5;
   text-shadow: 0 0 10px #fff;
 }
-
 /* --- Mission Section --- */
 .missionSection {
   text-align: center;
@@ -105,48 +153,111 @@
   font-weight: bold;
   margin-bottom: 1.5rem;
   color: #0a0a0a;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .missionText {
   font-size: 1.1rem;
   max-width: 800px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2.5rem auto;
   color: #333;
   line-height: 1.6;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
-.missionImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0;
+/* Changed missionGallery to flex row */
+.missionGallery {
+  display: flex;
+  flex-wrap: nowrap; /* keep all images in one row */
+  overflow-x: auto; /* allow horizontal scrolling if needed */
+  gap: 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
-.missionImages img,
-.missionImages :global(img) {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  box-shadow: none;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform, opacity;
+.missionItem {
+  flex: 0 0 auto; /* prevent shrinking, keep natural size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 180px;
+}
+
+.missionCircleImage {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.missionImages img:hover,
-.missionImages :global(img:hover) {
-  transform: scale(1.03);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+.missionCircleImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}
+
+.missionCaption {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #ff6600; /* bright, vibrant orange */
+  font-weight: 600; /* slightly bolder for even more visibility */
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* See More button styles */
+.seeMoreButton {
+  margin-top: 0.6rem;
+  background-color: #ff6600; /* bright orange */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.seeMoreButton:hover {
+  background-color: #e65500; /* darker orange on hover */
+}
+
+/* Description text shown when See More is clicked */
+.missionDescription {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  max-width: 180px;
+  text-align: center;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove underline from any link in the section */
+.missionSection a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 /* --- Vision Section --- */
 .visionSection {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #eef6f9;
+  background: linear-gradient(to bottom, #f5f7fa, #e4ebee);
 }
 
 .visionTitle {
@@ -165,72 +276,207 @@
 }
 
 .visionImages {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  perspective: 1000px;
 }
 
 .visionImage {
-  width: 300px;
+  position: relative;
+  width: 220px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  background: white;
+  border: 3px solid forestgreen;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: rotateZ(calc(-8deg + (16deg * var(--i))));
+  animation: float 4s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   will-change: transform, opacity;
 }
 
 .visionImage:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05) rotateZ(calc(-8deg + (16deg * var(--i))));
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.visionImage:nth-child(1) { --i: 0.1; z-index: 1; }
+.visionImage:nth-child(2) { --i: 0.3; z-index: 2; }
+.visionImage:nth-child(3) { --i: 0.6; z-index: 3; }
+.visionImage:nth-child(4) { --i: 0.9; z-index: 4; }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateZ(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotateZ(var(--rotate, 0deg));
+  }
 }
 
 /* --- Impact Section --- */
 .impactSection {
-  background-color: #000;
-  padding: 4rem 1rem;
-  text-align: center;
+  position: relative;
+  background: linear-gradient(to bottom right, #020024, #0b1d2c);
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 150, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 150, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .impactTitle {
-  font-size: 2.5rem;
-  color: #0ff;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px #0ff;
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #00ff9d;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 20px #00ff9d;
+  animation: pulseTitle 3s infinite ease-in-out;
+}
+
+@keyframes pulseTitle {
+  0%, 100% {
+    text-shadow: 0 0 20px #00ff9d;
+  }
+  50% {
+    text-shadow: 0 0 40px #00ff9d;
+  }
 }
 
 .impactGrid {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .impactCard {
-  background: #111;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 200, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .impactCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.4);
 }
 
+.emoji {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  transition: transform 0.6s ease;
+}
+
+.topRight:hover .emoji {
+  transform: scale(1.3);
+}
+
+.bottomRight:hover .emoji {
+  transform: rotate(360deg);
+}
+
+/* --- Futuristic Animated Counter Styling --- */
 .impactNumber {
   font-size: 3rem;
-  color: #0f0;
   font-weight: bold;
+  background: linear-gradient(to right, #00ff9d, #00d0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 15px #0f0;
+  animation: digitGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes digitGlow {
+  0% {
+    text-shadow: 0 0 5px #00ff9d44, 0 0 10px #00d0ff33;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ff9d, 0 0 20px #00d0ff;
+  }
 }
 
 .impactLabel {
-  font-size: 1.1rem;
   color: #fff;
+  font-size: 1.2rem;
 }
+
+.bottomLeft:hover {
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0;
+  }
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+.orbsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ff9d88, #00ff9d11);
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Random orb positions */
+.orb0 { width: 100px; height: 100px; top: 10%; left: 15%; }
+.orb1 { width: 60px; height: 60px; top: 25%; left: 80%; }
+.orb2 { width: 90px; height: 90px; top: 60%; left: 20%; }
+.orb3 { width: 70px; height: 70px; top: 75%; left: 60%; }
+.orb4 { width: 50px; height: 50px; top: 40%; left: 45%; }
+.orb5 { width: 110px; height: 110px; top: 5%; left: 70%; }
+.orb6 { width: 80px; height: 80px; top: 85%; left: 10%; }
+.orb7 { width: 95px; height: 95px; top: 50%; left: 90%; }
+
 
 /* Mobile tweaks */
 @media (max-width: 768px) {

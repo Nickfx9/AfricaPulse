@@ -1,6 +1,12 @@
-/* Pushes the content below the fixed navbar */
-.content-wrapper {
-  padding-top: 70px;
+/* Add smooth scroll behavior globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ Remove all underlines in content sections (but not navbar) */
+body a {
+  text-decoration: none;
+  color: inherit; /* Optional: inherits text color from parent */
 }
 
 /* Navbar base styles */
@@ -15,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* ✅ allow wrapping */
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 1000;
   font-family: Arial, sans-serif;
@@ -23,6 +30,17 @@
 .navbar-logo {
   font-weight: bold;
   font-size: 1.25rem;
+  flex: 1; /* ✅ allow logo to take available space */
+}
+
+/* Hamburger button - hidden by default */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
 }
 
 /* Links initially shown in row */
@@ -45,32 +63,20 @@
   color: #3399ff;
 }
 
-/* Hamburger button - hidden by default */
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: white;
-  background: none;
-  border: none;
-}
-
 /* ✅ Responsive tweaks */
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
   .hamburger {
     display: block;
+    margin-left: auto; /* align to right */
   }
 
   .navbar-links {
     flex-direction: column;
     width: 100%;
     display: none;
-    margin-top: 10px;
-    padding: 0;
+    margin-top: 12px;
+    gap: 0;
+    background-color: #0a0f2c;
   }
 
   .navbar-links.show {
@@ -78,8 +84,50 @@
   }
 
   .navbar-links li {
-    padding: 10px 0;
-    border-top: 1px solid #333;
+    padding: 12px 0;
     text-align: center;
+    border-top: 1px solid #1a1a1a;
   }
+}
+
+/* Team Section Styling */
+.team-section {
+  background-color: #0a0f2c;
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.team-member h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.team-member p {
+  font-size: 0.85rem;
+  color: #ccc;
 }
