@@ -25,52 +25,63 @@ const AfricaPulse = () => {
 
   return (
     <div>
-      <div className={styles.container}>
-        {/* LEFT SIDE - FUTURISTIC TEXT */}
-        <div className={styles.leftText}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            onClick={handleClick}
-            style={{ cursor: "pointer" }}
-          >
-            <h1 className={styles.title}> Blockchain innovation in africa </h1>
-            <p className={styles.subtitle}>Empowering Africa's Future techies </p>
-            <p className={styles.subtitle}>One Innovation at a Time</p>
-            <p className={styles.keywords}> Blockchain.  Ideas.  Community.</p>
-            <p>Our gateway to innovative African ideas and technology.</p>
-            <p>Discover exciting projects, community impact, and the pulse of African innovation.</p>
-
-            <button
-              className={styles.exploreBtn}
-              onClick={(e) => {
-                e.stopPropagation();
-                handleExploreClick();
-              }}
-            >
-              Explore Now
-            </button>
-
-            {showSecondMessage && (
-              <motion.div
-                className={styles.secondMessage}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 4, ease: "easeOut", delay: 1 }}
-              >
-                Your hub for <br />
-                blockchain innovation across Africa <br />
-                and experience the future
-              </motion.div>
-            )}
-          </motion.div>
-        </div>
-
-        {/* RIGHT SIDE IMAGE */}
-        <div className={`${styles.half} ${styles.rightImage}`}></div>
-        <div className={styles.overlay}></div>
+<div className={styles.container}>
+  {/* LEFT SIDE - VISION 2030 FUTURISTIC TEXT */}
+  <div className={styles.leftText} onClick={handleClick}>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+      style={{ cursor: "pointer" }}
+    >
+      {/* ✅ Vision 2030 Badge goes here */}
+      <div className={styles.visionBadge}>
+        VISION 2030 • POWERED BY INNOVATION
       </div>
+
+      <h1 className={styles.title}>BLOCKCHAIN INNOVATION IN AFRICA</h1>
+      <p className={styles.subtitle}>Empowering Africa's Future Techies</p>
+      <p className={styles.subtitle}>ONE INNOVATION AT A TIME</p>
+
+      <p className={styles.keywords}>VISION 2030 • POWERED BY INNOVATION</p>
+      <p className={styles.keywords}>Blockchain. Ideas. Community.</p>
+
+      <p className={styles.description}>
+        Our gateway to innovative African ideas and technology.
+      </p>
+      <p className={styles.description}>
+        Discover exciting projects, community impact,<br />
+        and feel the pulse of African innovation.
+      </p>
+
+      <button
+        className={styles.exploreBtn}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleExploreClick();
+        }}
+      >
+        🔍 Explore Now
+      </button>
+
+      {showSecondMessage && (
+        <motion.div
+          className={styles.secondMessage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 4, ease: "easeOut", delay: 1 }}
+        >
+          
+        </motion.div>
+      )}
+    </motion.div>
+  </div>
+
+
+  {/* RIGHT SIDE IMAGE */}
+  <div className={`${styles.rightImage} ${styles.animateBackground}`} />
+  <div className={styles.overlay} />
+</div>
 
 {/* Our Mission Section */}
 <section ref={missionRef} className={styles.missionSection}>

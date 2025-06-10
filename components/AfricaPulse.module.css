@@ -1,57 +1,181 @@
+/* === Futuristic Homepage Section Styles === */
+
 .container {
   display: flex;
   height: 100vh;
   width: 100%;
   overflow: hidden;
   position: relative;
+  background: linear-gradient(135deg, #0a0a1e, #1a0d2e, #2d1b69, #0f2027);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  animation: holographic-glow 3s ease-in-out infinite;
+  flex-direction: row;
+}
+
+@keyframes holographic-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+  }
 }
 
 .leftText {
   flex: 1;
-  padding: 3rem 4rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #0f3d0f;
-  color: #a0d468;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   min-height: 100vh;
+  color: #00ff88;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.1);
+  z-index: 2;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 900;
+  letter-spacing: 3px;
   margin: 0 0 1rem 0;
-  color: #a0d468;
+  color: transparent;
+  background-image: linear-gradient(90deg, #00ff88, #00d4ff, #ff6b35);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  animation: pulseTitle 2s infinite ease-in-out;
 }
 
-.subtitle {
-  font-size: 1.8rem;
-  margin: 0.2rem 0;
-  color: #a0d468;
+@keyframes pulseTitle {
+  0%, 100% {
+    text-shadow: 0 0 10px #00ff88;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ff88;
+  }
+}
+
+.subtitle,
+.keywords {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  color: #00ff88;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.3);
 }
 
 .keywords {
-  font-size: 1.5rem;
-  margin: 1rem 0 2rem 0;
-  color: #a0d468;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .exploreBtn {
-  background-color: #ff6600;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ff6b35, #ffd23f);
+  color: black;
   border: none;
-  color: white;
-  padding: 1rem 2.5rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  user-select: none;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.exploreBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: all 0.3s ease-in-out;
+}
+
+.exploreBtn:hover::after {
+  left: 100%;
 }
 
 .exploreBtn:hover {
-  background-color: #e65500;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 209, 63, 0.4);
 }
+
+/* Vision 2030 Badge */
+.visionBadge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #00ff88, #00d4ff, #ff6b35);
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+  position: relative;
+  animation: pulseBadge 3s infinite ease-in-out;
+  text-align: center;
+}
+
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.6);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftText {
+    flex: none;
+    width: 100%;
+    padding: 2rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .subtitle,
+  .keywords,
+  .exploreBtn,
+  .visionBadge {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 .rightImage {
   flex: 1;
@@ -60,6 +184,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  animation: backgroundShift 20s linear infinite;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: center;
+  }
 }
 
 .overlay {
@@ -67,64 +204,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
   pointer-events: none;
-}
-
-/* --- Removed conflicting styles ---
-.half {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-}
-
-.leftImage {
-  left: 0;
-  background-image: url('/images/africa-logo-2.jpg');
-  background-size: cover;
-  background-position: center;
-}
-*/
-
-.welcomeMessage {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 30px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 0 10px #0ff;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.text {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  font-weight: bold;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
-  z-index: 3;
-}
-
-.pulse {
-  color: #0f0;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    text-shadow: 0 0 5px #0f0;
-  }
-  50% {
-    text-shadow: 0 0 20px #0f0;
-  }
-  100% {
-    text-shadow: 0 0 5px #0f0;
-  }
+  z-index: 1;
 }
 
 .secondMessage {
@@ -132,15 +212,56 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: black;
+  font-size: 1.2rem;
+  color: #fff;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   z-index: 4;
-  width: 80%;
-  line-height: 1.5;
-  text-shadow: 0 0 10px #fff;
+  width: 90%;
+  line-height: 1.6;
+  text-shadow: 0 0 10px #00d4ff;
 }
+
+/* Floating Particles */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ff88, #00d4ff);
+  opacity: 0.8;
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle, .keywords {
+    font-size: 1.1rem;
+  }
+  .exploreBtn {
+    font-size: 1rem;
+  }
+}
+
 /* --- Mission Section --- */
 .missionSection {
   text-align: center;

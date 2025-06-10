@@ -1,54 +1,94 @@
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function HostEventForm() {
+  const formRef = useRef(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    setTimeout(() => {
+      if (formRef.current) {
+        formRef.current.reset();
+        setSubmitted(true);
+      }
+    }, 1000); // Wait to ensure Formspree processes
+  };
+
   return (
-    <section className="bg-[#0a0f2c] text-white py-24 px-6 md:px-12 rounded-2xl mt-20 shadow-2xl">
-      <motion.div 
+    <section className="futuristic-form" style={{ padding: '4rem 1.5rem', background: '#0a0f2c', color: 'white' }}>
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto"
+        className="host-form-container"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center text-orange-400">
-          Host Your Own Event
-        </h2>
+        <div className="scanline"></div>
+        <h2 className="pulse-title">Host Your Own Event</h2>
 
-        <form 
+        <form
+          ref={formRef}
           action="https://formspree.io/f/mqaqdwva"
           method="POST"
-          className="space-y-8"
+          target="hidden_iframe"
+          onSubmit={handleSubmit}
+          className="form-grid"
+          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '2rem' }}
         >
-          <div className="grid md:grid-cols-2 gap-8">
-            <input name="event_name" type="text" required placeholder="Event Name" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
-            <input name="organizer_name" type="text" required placeholder="Organizer Name" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
-            <input name="email" type="email" required placeholder="Contact Email" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
-            <input name="phone_number" type="tel" required placeholder="Phone Number" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
+          <div className="form-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <input name="event_name" type="text" required placeholder="Event Name" className="futuristic-input" />
+            <input name="organizer_name" type="text" required placeholder="Organizer Name" className="futuristic-input" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <select name="event_type" required className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition">
+          <div className="form-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <input name="email" type="email" required placeholder="Contact Email" className="futuristic-input" />
+            <input name="phone_number" type="tel" required placeholder="Phone Number" className="futuristic-input" />
+          </div>
+
+          <div className="form-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <select name="event_type" required className="futuristic-input" style={{ flex: 1 }}>
               <option value="">Select Event Type</option>
               <option>Workshop</option>
               <option>Meetup</option>
               <option>Hackathon</option>
               <option>Panel Discussion</option>
             </select>
-            <input name="event_date" type="date" required className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
+            <input name="event_date" type="date" required className="futuristic-input" style={{ flex: 1 }} />
           </div>
 
-          <input name="location" type="text" required placeholder="Location (City/Country or Online)" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition" />
+          <input name="location" type="text" required placeholder="Location (City/Country or Online)" className="futuristic-input" />
 
-          <textarea name="description" required rows="5" placeholder="Brief description & goals of your event…" className="bg-[#12193e] p-5 rounded-lg w-full outline-none text-xl focus:ring-2 ring-orange-400 transition"></textarea>
+          <textarea
+            name="description"
+            required
+            rows="5"
+            placeholder="Brief description & goals of your event…"
+            className="futuristic-input"
+          ></textarea>
 
-          <label className="flex items-center space-x-3 text-xl">
-            <input name="sponsorship" type="checkbox" value="Yes" className="h-6 w-6 text-orange-500" />
-            <span>We’re seeking sponsorship for this event</span>
+          <label className="custom-checkbox" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <input name="sponsorship" type="checkbox" value="Yes" />
+            <span className="checkmark"></span>
+            We’re seeking sponsorship for this event
           </label>
 
-          <button type="submit" className="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white py-4 px-8 rounded-xl font-bold text-xl transition shadow-md hover:shadow-lg mt-6">
-            🚀 Submit Event Request
+          <button type="submit" className="futuristic-button">
+             Submit Event Request
           </button>
         </form>
+
+        {submitted && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            style={{ color: '#00ffff', marginTop: '1rem', textAlign: 'center' }}
+          >
+            ✅ Your request has been submitted!
+          </motion.p>
+        )}
+
+        {/* Invisible iframe for formspree success redirect */}
+        <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
       </motion.div>
     </section>
   );

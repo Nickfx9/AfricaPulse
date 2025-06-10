@@ -1,0 +1,164 @@
+.futuristicContainer {
+  background: linear-gradient(135deg, #0a0b1e, #1a1b3a);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Orbs */
+.futuristicContainer::before,
+.futuristicContainer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 255, 157, 0.15);
+  filter: blur(60px);
+  animation: float 10s infinite alternate;
+}
+
+.futuristicContainer::before {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.futuristicContainer::after {
+  width: 300px;
+  height: 300px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+/* Grid Setup */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Feature Cards */
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 157, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.15);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+}
+
+.featureCard h3 {
+  color: #00ff9d;
+  margin-bottom: 0.5rem;
+}
+
+/* Rotating Border Container */
+.rotatingBorder {
+  border-radius: 25px;
+  padding: 2rem;
+  position: relative;
+  margin: 5rem auto;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.rotatingBorder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #00ff9d, #00d4ff, #00ff9d);
+  border-radius: inherit;
+  z-index: -1;
+  animation: spinBorder 8s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+}
+
+@keyframes spinBorder {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.innovationContent {
+  text-align: center;
+  z-index: 1;
+}
+
+.innovationContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.innovationContent p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Plan Event Section */
+.planEventSection {
+  margin-top: 5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 157, 0.08));
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.planEventSection h2 {
+  font-size: 1.6rem;
+  color: #00ff9d;
+  margin-bottom: 1rem;
+}
+
+.planEventSection p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+/* Call-to-Action Button */
+.ctaButton {
+  background: linear-gradient(to right, #00ff9d, #00d4ff);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
