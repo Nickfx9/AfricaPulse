@@ -43,7 +43,7 @@ const AfricaPulse = () => {
       <p className={styles.subtitle}>Empowering Africa's Future Techies</p>
       <p className={styles.subtitle}>ONE INNOVATION AT A TIME</p>
 
-      <p className={styles.keywords}>VISION 2030 • POWERED BY INNOVATION</p>
+      <p className={styles.keywords}>a movement that starts with few voices</p>
       <p className={styles.keywords}>Blockchain. Ideas. Community.</p>
 
       <p className={styles.description}>
@@ -149,47 +149,84 @@ const AfricaPulse = () => {
     </motion.div>
   )}
 </section>
-      {/* Our Vision Section */}
-      <section className={styles.visionSection}>
-        <h2 className={styles.visionTitle}>Our Vision</h2>
-        <p className={styles.visionText}>
-          Our vision is to see a connected Africa where knowledge and opportunities flow
-          freely across borders. We believe in the power of collaboration and aim to be
-          the leading platform for connecting individuals and organizations working
-          towards a sustainable and prosperous future for the continent.
-        </p>
+      {/* === Our Vision Section === */}
+<section className={styles.visionSection}>
+  <div className={styles.visionHeader}>
+    <div className={styles.visionBadge}>We're the future builders</div>
+    <h2 className={styles.visionTitle}>Our Journey Forward</h2>
+    <p className={styles.visionText}>
+      AfricaPulse envisions a connected, innovative Africa by 2030. We empower
+      communities with blockchain, digital collaboration, and borderless innovation.
+    </p>
+  </div>
 
-        {mounted && (
-          <motion.div
-            className={styles.visionImages}
-            initial="hidden"
-            whileInView="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-            viewport={{ once: true }}
-          >
-            {[1, 2, 3, 4].map((num) => (
-              <motion.img
-                key={num}
-                src={`/images/vision${num}.jpg`}
-                alt={`Vision ${num}`}
-                className={styles.visionImage}
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8, y: 20 },
-                  visible: { opacity: 1, scale: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              />
-            ))}
-          </motion.div>
-        )}
-      </section>
+  {mounted && (
+    <motion.div
+      className={styles.visionGrid}
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.2 } },
+      }}
+      viewport={{ once: true }}
+    >
+      {[
+        {
+          title: "Digital Innovation Conference",
+          stats: "500+ Attendees · 12 Countries · 24 Speakers",
+          description: "AI, blockchain, and digital transformation focus",
+          image: "vision1.jpg",
+        },
+        {
+          title: "AfricaPulse Excellence Awards",
+          stats: "300+ Nominees · 15 Categories · 50 Winners",
+          description: "Celebrating tech achievements and innovation",
+          image: "vision2.jpg",
+        },
+        {
+          title: "Pan-African Tech Gathering",
+          stats: "800+ Participants · 20 Cities · Networking",
+          description: "Building cross-border connections",
+          image: "vision3.jpg",
+        },
+        {
+          title: "Future Tech Showcase",
+          stats: "100+ Demos · 25 Startups · Live Innovation",
+          description: "Cutting-edge tech demonstrations",
+          image: "vision4.jpg",
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          className={styles.visionCard}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+        >
+          <img
+            src={`/images/${item.image}`}
+            alt={item.title}
+            className={styles.cardImage}
+          />
+          <h3 className={styles.cardTitle}>{item.title}</h3>
+          <p className={styles.cardStats}>{item.stats}</p>
+          <p className={styles.cardDesc}>{item.description}</p>
+        </motion.div>
+      ))}
+    </motion.div>
+  )}
+
+  <div className={styles.futureSection}>
+    <h2 className={styles.futureTitle}>Shaping Tomorrow, Today</h2>
+    <p className={styles.futureText}>
+      Join us in building a decentralized, inclusive, and tech-forward Africa by 2030.
+    </p>
+    <button className={styles.futureButton}>Join Our Vision</button>
+  </div>
+</section>
 
      {/* Our Values Section */}
 <section className={styles.valuesSection}>

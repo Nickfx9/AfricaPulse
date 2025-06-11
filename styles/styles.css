@@ -2,6 +2,11 @@
 html {
   scroll-behavior: smooth;
 }
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
 
 /* LINKS RESET */
 body a {
@@ -87,47 +92,243 @@ body a {
   }
 }
 
-/* ================== TEAM SECTION ================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 .team-section {
-  background-color: #0a0f2c;
+  position: relative;
+  background: linear-gradient(to bottom right, #041a11, #0a0f2c);
   color: white;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
   text-align: center;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.team-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #22c55e, #4ade80, #10b981);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text; /* Required for Chrome/Safari */
+  color: transparent; /* Also required */
+  -webkit-text-fill-color: transparent; /* Chrome/Safari */
+  animation: gradientShift 6s ease infinite;
+}
+
+
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.team-description {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 0.95rem;
+  color: #ccc;
 }
 
 .team-grid {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 180px;
+.futuristic-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.team-member img {
+.futuristic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(74, 222, 128, 0.2), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.futuristic-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 45px rgba(74, 222, 128, 0.7);
+}
+
+.avatar-wrapper {
+  position: relative;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-avatar {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  border: 4px solid #22c55e;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.7);
+}
+
+.scanner-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed rgba(74, 222, 128, 0.5);
+  animation: rotateScanner 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateScanner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .team-member h3 {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #4ade80;
 }
 
 .team-member p {
   font-size: 0.85rem;
   color: #ccc;
+  margin-bottom: 1rem;
 }
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.icon:hover {
+  transform: scale(1.3);
+  color: #22c55e;
+}
+
+.icon::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.icon:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Floating particles */
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: floatUp 6s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+.particle:nth-child(odd) {
+  animation-duration: 8s;
+}
+.particle:nth-child(even) {
+  animation-duration: 7s;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 6s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 7s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 8s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* Optional binary stream */
+.binary-stream {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  color: #22c55e;
+  opacity: 0.3;
+  user-select: none;
+  font-family: monospace;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  .team-title {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* ================== HOST EVENT FORM ================== */
 .futuristic-form {

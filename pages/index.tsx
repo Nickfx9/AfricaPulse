@@ -22,28 +22,57 @@ const Home = () => {
       <section id="join-us">
         <HostEventForm />
       </section>
+<section id="team" className="team-section">
+  <div className="team-title-wrapper">
+    <h2 className="team-title gradient-text">⚡ Meet the Team Driving the Web3 Force</h2>
+    <p className="team-description">
+      At AfricaPulse, we're passionate about building bridges between communities and technology. We contribute by organizing grassroots events, supporting startups, and spreading awareness about blockchain’s potential to empower everyday lives across Africa.
+    </p>
+  </div>
 
-      <section id="team" className="team-section">
-        <h2>Meet the Team Driving the web3 Force</h2>
+  <div className="team-grid">
+    <div className="team-member futuristic-card">
+      <div className="avatar-wrapper">
+        <img src="/images/founder.jpg" alt="Nicholas Mwathiki" className="team-avatar" />
+        <div className="scanner-ring"></div>
+      </div>
+      <h3>Nicholas Mwathiki</h3>
+      <p>Founder & CEO</p>
+      <p>software Engineer</p>
+      <div className="social-icons">
+        <span className="icon">📘</span>
+        <span className="icon">🐦</span>
+        <span className="icon">💼</span>
+      </div>
+    </div>
 
-        <p style={{ maxWidth: '700px', margin: '0 auto', marginBottom: '2rem', fontSize: '0.95rem', color: '#ccc' }}>
-          At AfricaPulse, we're passionate about building bridges between communities and technology. We contribute by organizing grassroots events, supporting startups, and spreading awareness about blockchain’s potential to empower everyday lives across Africa.
-        </p>
+    <div className="team-member futuristic-card">
+      <div className="avatar-wrapper">
+        <img src="/images/chief-director.jpg" alt="Douglas Kimathi" className="team-avatar" />
+        <div className="scanner-ring"></div>
+      </div>
+      <h3>Douglas Kimathi</h3>
+      <p>Chief Directing Manager</p>
+      <div className="social-icons">
+        <span className="icon">📘</span>
+        <span className="icon">🐦</span>
+        <span className="icon">💼</span>
+      </div>
+    </div>
+  </div>
 
-        <div className="team-grid">
-          <div className="team-member">
-            <img src="/images/founder.jpg" alt="Nicholas Mwathiki" />
-            <h3>Nicholas Mwathiki</h3>
-            <p>Founder & CEO</p>
-          </div>
+  {/* Floating particles */}
+  <div className="floating-particles">
+    {[...Array(9)].map((_, i) => (
+      <span key={i} className="particle" />
+    ))}
+  </div>
 
-          <div className="team-member">
-            <img src="/images/chief-director.jpg" alt="Douglas Kimathi" />
-            <h3>Douglas Kimathi</h3>
-            <p>Chief Directing Manager</p>
-          </div>
-        </div>
-      </section>
+  {/* Optional: Binary stream */}
+  <div className="binary-stream">01010100110011010101011010100101</div>
+</section>
+
+
 
       <section id="contact">
         <h2>Join Us</h2>

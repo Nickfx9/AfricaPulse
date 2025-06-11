@@ -378,67 +378,203 @@
 .visionSection {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #f5f7fa, #e4ebee);
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a2e, #16213e);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.visionHeader {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  padding: 0 2rem;
+}
+
+.visionBadge {
+  display: inline-block;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  color: #0a0a0a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 0 12px #00ff88aa;
+  animation: pulseBadge 2s ease-in-out infinite;
 }
 
 .visionTitle {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #0a0a0a;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px #00ff88;
+  animation: glowText 4s ease-in-out infinite;
+  margin-top: 1rem;
 }
 
 .visionText {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 800px;
-  margin: 0 auto 2.5rem auto;
-  color: #333;
-  line-height: 1.6;
+  margin: 1.5rem auto 3rem auto;
+  color: #b0b0b0;
+  line-height: 1.7;
 }
 
-.visionImages {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.visionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  perspective: 1000px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
-.visionImage {
-  position: relative;
-  width: 220px;
+.visionCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 255, 136, 0.15);
+  transition: all 0.4s ease;
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.visionCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 40px #00ff88aa;
+  border-color: #00ff88;
+}
+
+.cardImage {
+  width: 100%;
   height: auto;
-  padding: 10px;
-  background: white;
-  border: 3px solid forestgreen;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transform: rotateZ(calc(-8deg + (16deg * var(--i))));
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform, opacity;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+
+  -webkit-user-drag: none;      /* Prevent image drag in Safari/Chrome */
+  -webkit-user-select: none;    /* Prevent text selection on tap */
+  user-select: none;            /* Prevent selection on supported browsers */
+  touch-action: manipulation;   /* Prevent double-tap zoom etc. */
 }
 
-.visionImage:hover {
-  transform: scale(1.05) rotateZ(calc(-8deg + (16deg * var(--i))));
-  z-index: 10;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+
+.cardTitle {
+  font-size: 1.3rem;
+  color: #00ff88;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.visionImage:nth-child(1) { --i: 0.1; z-index: 1; }
-.visionImage:nth-child(2) { --i: 0.3; z-index: 2; }
-.visionImage:nth-child(3) { --i: 0.6; z-index: 3; }
-.visionImage:nth-child(4) { --i: 0.9; z-index: 4; }
+.cardStats {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin-bottom: 0.7rem;
+}
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotateZ(var(--rotate, 0deg));
+.cardDesc {
+  font-size: 1.05rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.futureSection {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #00ff88, #00cc6a, #00ff88);
+  background-size: 600% 600%;
+  animation: rotateGradient 20s linear infinite;
+  color: #0a0a0a;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.futureTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.futureText {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: #0a0a0a;
+}
+
+.futureButton {
+  background: #0a0a0a;
+  color: #00ff88;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00ff88;
+  transition: all 0.3s ease;
+}
+
+.futureButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00ff88;
+}
+
+@keyframes glowText {
+  0%, 100% { text-shadow: 0 0 8px #00ff88; }
+  50% { text-shadow: 0 0 16px #00ff88; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes rotateGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseBadge {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 12px #00ff88aa; }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px #00ff88aa; }
+}
+
+@media (max-width: 768px) {
+  .visionTitle {
+    font-size: 2.2rem;
   }
-  50% {
-    transform: translateY(-8px) rotateZ(var(--rotate, 0deg));
+
+  .visionText {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .futureTitle {
+    font-size: 1.6rem;
+  }
+
+  .futureText {
+    font-size: 1rem;
+  }
+
+  .futureButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
+
+
 
 /* --- Impact Section --- */
 .impactSection {
