@@ -187,24 +187,11 @@
   animation: backgroundShift 20s linear infinite;
 }
 
-@keyframes backgroundShift {
-  0% {
-    background-position: center;
+@media (max-width: 768px) {
+  .rightImage {
+    animation: none;
+    background-position: center; /* Ensures static position */
   }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: center;
-  }
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-  z-index: 1;
 }
 
 .secondMessage {
