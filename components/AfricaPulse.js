@@ -6,7 +6,7 @@ import PulseYourIdea from "./PulseYourIdea";
 const AfricaPulse = () => {
   const [showSecondMessage, setShowSecondMessage] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const missionRef = useRef(null);
+  const visionRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
@@ -17,9 +17,9 @@ const AfricaPulse = () => {
   };
 
   const handleExploreClick = () => {
-    // Scroll smoothly to the mission section
-    if (missionRef.current) {
-      missionRef.current.scrollIntoView({ behavior: "smooth" });
+    // Scroll smoothly to the vision section
+    if (visionRef.current) {
+      visionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -55,14 +55,16 @@ const AfricaPulse = () => {
       </p>
 
       <button
-        className={styles.exploreBtn}
-        onClick={(e) => {
-          e.stopPropagation();
-          handleExploreClick();
-        }}
-      >
-        🔍 Explore Now
-      </button>
+  type="button" // ✅ Prevents reload behavior even in edge cases
+  className={styles.exploreBtn}
+  onClick={(e) => {
+    e.preventDefault();    // ✅ Prevents any default action like reload
+    e.stopPropagation();   // optional, blocks bubbling
+    handleExploreClick();  // ✅ scrolls to the section
+  }}
+>
+  🔍 Explore Now
+</button>
 
       {showSecondMessage && (
         <motion.div
@@ -84,7 +86,7 @@ const AfricaPulse = () => {
 </div>
 
 {/* Our Mission Section */}
-<section ref={missionRef} className={styles.missionSection}>
+<section  className={styles.missionSection}>
   <h2 className={styles.missionTitle}>Our Mission</h2>
   <p className={styles.missionText}>
     To empower communities by providing a platform for sharing information,
@@ -150,7 +152,7 @@ const AfricaPulse = () => {
   )}
 </section>
       {/* === Our Vision Section === */}
-<section className={styles.visionSection}>
+<section id="vision" className={styles.visionSection}ref={visionRef} >
   <div className={styles.visionHeader}>
     <div className={styles.visionBadge}>We're the future builders</div>
     <h2 className={styles.visionTitle}>Our Journey Forward</h2>
@@ -219,10 +221,17 @@ const AfricaPulse = () => {
     </motion.div>
   )}
 
-  <div className={styles.futureSection}>
+  <div id="about" className={styles.futureSection}>
+    <h2 className={styles.futureTitle}>ABOUT US</h2>
     <h2 className={styles.futureTitle}>Shaping Tomorrow, Today</h2>
     <p className={styles.futureText}>
       Join us in building a decentralized, inclusive, and tech-forward Africa by 2030.
+      AfricaPulse is a visionary initiative where Africa's heartbeat connects with the future of Web3. We are driven by a mission to empower communities through blockchain innovation, digital inclusion, and grassroots collaboration.
+
+We organize on-the-ground events, support early-stage African startups, and create opportunities for builders, creators, and changemakers to thrive in the decentralized era. we're more than a platform  it's a movement bridging technology and people to shape a stronger, unified digital future.
+
+Whether you're a developer, entrepreneur, or dreamer  you belong here.
+This is your pulse. This is Africa's moment.
     </p>
     <button className={styles.futureButton}>Join Our Vision</button>
   </div>

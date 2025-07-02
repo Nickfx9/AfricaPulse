@@ -15,13 +15,16 @@ export default function HostEventForm() {
   };
 
   return (
-    <section className="futuristic-form" style={{ padding: '4rem 1.5rem', background: '#0a0f2c', color: 'white' }}>
+    <section id="host-event" className="futuristic-form" style={{ padding: '4rem 1.5rem', background: '#0a0f2c', color: 'white' }}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="host-form-container"
       >
+        {/* You can remove this empty section if unused */}
+        {/* <section id="events"></section> */}
+
         <div className="scanline"></div>
         <h2 className="pulse-title">Host Your Own Event</h2>
 
@@ -72,7 +75,7 @@ export default function HostEventForm() {
           </label>
 
           <button type="submit" className="futuristic-button">
-             Submit Event Request
+            Submit Event Request
           </button>
         </form>
 
