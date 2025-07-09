@@ -179,7 +179,7 @@
 
 .rightImage {
   flex: 1;
-  background-image: url('/images/africa-right.jpg');
+  background-image: url('/images/africa-right.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

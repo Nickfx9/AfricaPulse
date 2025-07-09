@@ -2,10 +2,14 @@ import PulseYourIdea from '../components/PulseYourIdea';
 import UpcomingEvents from '../components/UpcomingEvents';
 import HostEventForm from '../components/HostEventForm';
 import FuturisticAbout from '../components/FuturisticAbout'; // 🔥 NEW futuristic section
+import Hamburger from '../components/Hamburger'; // ✅ NEW: Hamburger for mobile nav
+
 
 const Home = () => {
   return (
     <>
+    <Hamburger /> {/* ✅ ADDED HERE TO SHOW ON ALL PAGES */}
+    
       <section id="home" className="welcome">
         <h1>Is Where Africa’s heartbeat meets blockchain technology.</h1>
         <p>Pioneering the blockchain movement across Africa</p>
@@ -24,7 +28,7 @@ const Home = () => {
       </section>
 <section id="team" className="team-section">
   <div className="team-title-wrapper">
-    <h2 className="team-title gradient-text">⚡ Meet the Team Driving the Web3 Force</h2>
+    <h2 className="team-title gradient-text">⚡ Meet the Team Driving the Force</h2>
     <p className="team-description">
       At AfricaPulse, we're passionate about building bridges between communities and technology. We contribute by organizing grassroots events, supporting startups, and spreading awareness about blockchain’s potential to empower everyday lives across Africa.
     </p>
@@ -34,7 +38,7 @@ const Home = () => {
     {/* Nicholas Mwathiki */}
     <div className="team-member futuristic-card">
       <div className="avatar-wrapper">
-        <img src="/images/founder.jpg" alt="Nicholas Mwathiki" className="team-avatar" />
+        <img src="/images/founder.webp" alt="Nicholas Mwathiki" className="team-avatar" />
         <div className="scanner-ring"></div>
       </div>
       <h3>Nicholas Mwathiki</h3>
@@ -66,7 +70,7 @@ const Home = () => {
     {/* Douglas Kimathi */}
     <div className="team-member futuristic-card">
       <div className="avatar-wrapper">
-        <img src="/images/chief-director.jpg" alt="Douglas Kimathi" className="team-avatar" />
+        <img src="/images/chief-director.webp" alt="Douglas Kimathi" className="team-avatar" />
         <div className="scanner-ring"></div>
       </div>
       <h3>Douglas Kimathi</h3>

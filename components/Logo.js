@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../public/images/africa-logo-2.jpg"; // Ensure this path is correct
+import logo from "../public/images/africa-logo-2.webp"; // Ensure this path is correct
 
 export default function Logo() {
   return (
